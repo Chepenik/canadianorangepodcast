@@ -1,65 +1,186 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { Great_Vibes, VT323 } from "next/font/google";
+
+const vt323 = VT323({ weight: "400", subsets: ["latin"] });
+const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
+
+type Episode =
+  | {
+      number: number;
+      title: string;
+      subtitle: string;
+      href: string;
+      status: "published";
+    }
+  | {
+      number: number;
+      title: string;
+      status: "coming-soon";
+    };
+
+const episodes: Episode[] = [
+  {
+    number: 1,
+    title: "Lucas & Nick",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2311494/",
+    status: "published",
+  },
+  {
+    number: 2,
+    title: "Lucas & Nick",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2324667/",
+    status: "published",
+  },
+  {
+    number: 3,
+    title: "Lucas & Nick talk about Health",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2337279/",
+    status: "published",
+  },
+  {
+    number: 4,
+    title: "Alin & Nick",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2349588/",
+    status: "published",
+  },
+  {
+    number: 5,
+    title: "Lucas & Nick talk about parenting",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2350577/",
+    status: "published",
+  },
+  {
+    number: 6,
+    title: "Seb & Nick",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2352197/",
+    status: "published",
+  },
+  {
+    number: 7,
+    title: "Coming Soon",
+    status: "coming-soon",
+  },
+  {
+    number: 8,
+    title: "Coming Soon",
+    status: "coming-soon",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen w-full bg-[#050814] text-white px-6 py-12">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
+        {/* HEADER */}
+        <header className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <h1
+            className={`${vt323.className} text-3xl sm:text-4xl md:text-5xl tracking-[0.08em] text-white`}
+          >
+            Canadian Orange Podcast
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p
+            className={`${vt323.className} text-sm sm:text-base md:text-lg tracking-[0.12em] text-zinc-300 md:text-right`}
+          >
+            Fix the money. Fix Canada.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        </header>
+
+        {/* GRID: 1 / 2 / 3 / 4 per row */}
+        <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {episodes.map((episode) => {
+            if (episode.status === "published") {
+              const Card = (
+                <div
+                  className={`${vt323.className} flex h-full flex-col rounded-[24px] border border-white/10 px-6 py-8 transition-transform duration-300 bg-gradient-to-br from-[#2a113f] via-[#090814] to-[#180829] hover:-translate-y-1 hover:scale-[1.02] shadow-[0_18px_45px_rgba(80,45,180,0.35)]`}
+                >
+                  <div className="text-xs sm:text-sm tracking-[0.15em] text-white/70">
+                    Episode {episode.number}
+                  </div>
+
+                  <div className="mt-8 flex-1 text-center">
+                    <div
+                      className={`${greatVibes.className} text-3xl sm:text-4xl text-orange-400`}
+                    >
+                      {episode.title}
+                    </div>
+                  </div>
+
+                  <div className="mt-auto flex items-center justify-between pt-8 text-xs sm:text-sm text-white/70">
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src="/finalmapleleaf.png"
+                        alt="Canadian Orange Podcast maple leaf"
+                        width={48}
+                        height={48}
+                        className="rounded-md border border-white/10"
+                      />
+                      <span
+                        className={`${greatVibes.className} text-lg text-orange-200`}
+                      >
+                        {episode.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+
+              return (
+                <Link
+                  key={episode.number}
+                  href={episode.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-full"
+                  prefetch={false}
+                >
+                  {Card}
+                </Link>
+              );
+            }
+
+            // COMING SOON CARDS – same flex layout for equal height
+            return (
+              <div
+                key={episode.number}
+                className={`${vt323.className} flex h-full flex-col rounded-[24px] border border-white/10 bg-[#0f1424] px-6 py-8 opacity-90 transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.01]`}
+              >
+                <div className="text-xs sm:text-sm tracking-[0.15em] text-white/70">
+                  Episode {episode.number}
+                </div>
+
+                <div className="mt-8 flex-1 text-center">
+                  <div className="text-2xl sm:text-3xl text-white/50">
+                    {episode.title}
+                  </div>
+                </div>
+
+                <div className="mt-auto pt-8 text-center text-xs sm:text-sm uppercase tracking-[0.2em] text-white/40">
+                  Coming Soon
+                </div>
+              </div>
+            );
+          })}
+        </section>
+
+        {/* FOOTER CTA */}
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link
+            href="https://www.canadianorangeparty.com/"
+            className={`${vt323.className} rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-base sm:text-lg tracking-[0.1em] text-white transition hover:bg-white/10`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Canadian Orange Party Hub
+          </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
