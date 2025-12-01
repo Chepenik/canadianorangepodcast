@@ -96,7 +96,7 @@ export default function Home() {
           </p>
         </header>
 
-        {/* GRID: 1 / 2 / 3 / 4 per row */}
+        {/* GRID */}
         <section
           aria-label="Podcast episodes"
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
@@ -105,7 +105,7 @@ export default function Home() {
             if (episode.status === "published") {
               const Card = (
                 <article
-                  className={`${vt323.className} flex h-full flex-col rounded-[24px] border border-white/10 px-6 py-8 transition-transform duration-300 bg-gradient-to-br from-[#2a113f] via-[#090814] to-[#180829] hover:-translate-y-1 hover:scale-[1.02] shadow-[0_18px_45px_rgba(80,45,180,0.35)]`}
+                  className={`${vt323.className} flex h-full flex-col rounded-[24px] border border-white/10 px-6 py-8 transition-transform duration-300 bg-gradient-to-br from-[#0a1a3c] via-[#090814] to-[#0d1430] hover:-translate-y-1 hover:scale-[1.02] shadow-[0_18px_45px_rgba(20,45,120,0.35)]`}
                 >
                   <div className="text-xs sm:text-sm tracking-[0.15em] text-white/70">
                     Episode {episode.number}
@@ -145,7 +145,6 @@ export default function Home() {
               );
             }
 
-            // COMING SOON CARDS – same flex layout for equal height
             return (
               <article
                 key={episode.number}
