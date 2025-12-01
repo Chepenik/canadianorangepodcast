@@ -88,11 +88,6 @@ export default function Home() {
             >
               Canadian Orange Podcast
             </h1>
-            <p className="mt-3 max-w-xl text-sm sm:text-base text-zinc-300">
-              A Canadian Bitcoin podcast with Nick, Lucas, Alin, Seb and guests,
-              focused on sound money, freedom, and fixing Canada one episode at
-              a time.
-            </p>
           </div>
           <p
             className={`${vt323.className} text-sm sm:text-base md:text-lg tracking-[0.12em] text-zinc-300 md:text-right`}
@@ -124,21 +119,14 @@ export default function Home() {
                     </h2>
                   </div>
 
-                  <div className="mt-auto flex items-center justify-between pt-8 text-xs sm:text-sm text-white/70">
-                    <div className="flex items-center gap-3">
-                      <Image
-                        src="/finalmapleleaf.png"
-                        alt="Canadian Orange Podcast maple leaf logo"
-                        width={48}
-                        height={48}
-                        className="rounded-md border border-white/10"
-                      />
-                      <span
-                        className={`${greatVibes.className} text-lg text-orange-200`}
-                      >
-                        {episode.subtitle}
-                      </span>
-                    </div>
+                  <div className="mt-auto flex items-center justify-center pt-8">
+                    <Image
+                      src="/finalmapleleaf.png"
+                      alt="Canadian Orange Podcast maple leaf logo"
+                      width={64}
+                      height={64}
+                      className="rounded-md border border-white/10"
+                    />
                   </div>
                 </article>
               );
