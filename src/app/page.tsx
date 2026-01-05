@@ -66,13 +66,24 @@ const episodes: Episode[] = [
   },
   {
     number: 7,
-    title: "Coming Soon",
-    status: "coming-soon",
+    title: "Lucas & Nick",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2367375/",
+    status: "published",
   },
   {
     number: 8,
-    title: "Coming Soon",
-    status: "coming-soon",
+    title: "Lucas & Nick talk about Freedom",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2382542/",
+    status: "published",
+  },
+  {
+    number: 9,
+    title: "Lucas & Nick talk about Personal Finance",
+    subtitle: "Canadian Orange Podcast by Canadians",
+    href: "https://rss.com/podcasts/bitcoinstoa/2397429/",
+    status: "published",
   },
 ];
 
