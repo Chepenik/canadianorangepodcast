@@ -89,7 +89,7 @@ const episodes: Episode[] = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full bg-[#050814] text-white px-6 py-12">
+    <main className="min-h-screen w-full bg-[#0c0b09] text-white px-6 py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
         {/* HEADER */}
         <header className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
@@ -116,7 +116,7 @@ export default function Home() {
             if (episode.status === "published") {
               const Card = (
                 <article
-                  className={`${vt323.className} flex h-full flex-col rounded-[24px] border border-white/10 px-6 py-8 transition-transform duration-300 bg-gradient-to-br from-[#0a1a3c] via-[#090814] to-[#0d1430] hover:-translate-y-1 hover:scale-[1.02] shadow-[0_18px_45px_rgba(20,45,120,0.35)]`}
+                  className={`${vt323.className} flex h-full flex-col rounded-[24px] border border-white/10 px-6 py-8 transition-transform duration-300 bg-gradient-to-br from-[#1a1815] via-[#0c0b09] to-[#141210] hover:-translate-y-1 hover:scale-[1.02] shadow-[0_18px_45px_rgba(20,20,15,0.35)]`}
                 >
                   <div className="text-xs sm:text-sm tracking-[0.15em] text-white/70">
                     Episode {episode.number}
@@ -159,7 +159,7 @@ export default function Home() {
             return (
               <article
                 key={episode.number}
-                className={`${vt323.className} flex h-full flex-col rounded-[24px] border border-white/10 bg-[#0f1424] px-6 py-8 opacity-90 transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.01]`}
+                className={`${vt323.className} flex h-full flex-col rounded-[24px] border border-white/10 bg-[#141210] px-6 py-8 opacity-90 transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.01]`}
               >
                 <div className="text-xs sm:text-sm tracking-[0.15em] text-white/70">
                   Episode {episode.number}
